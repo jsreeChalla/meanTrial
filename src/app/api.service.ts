@@ -33,34 +33,34 @@ export class ApiService {
     let body = res;
     return body || { };
   }
-  getBooks(): Observable<any> {
+  getUsers(): Observable<any> {
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
   
-  getBook(id: string): Observable<any> {
+  getUser(id: string): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
   
-  postBook(data): Observable<any> {
+  postUser(data): Observable<any> {
     return this.http.post(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
   
-  updateBook(id,data): Observable<any> {
+  updateUser(id,data): Observable<any> {
     return this.http.put(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
   
-  deleteBook(id: string): Observable<{}> {
+  deleteUser(id: string): Observable<{}> {
     const url = `${apiUrl}/${id}`;
     return this.http.delete(url, httpOptions)
       .pipe(

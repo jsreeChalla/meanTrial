@@ -1,0 +1,20 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/user-create']"><mat-icon>add</mat-icon></a>
+</div>
+
+<div class="example-container ">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th>Phone Number</th>
+      <th></th>
+    </tr>
+    <tr *ngFor='let element of users'>
+      <td>{{element.name}}</td>
+      <td>{{element.email}}</td>
+      <td>{{element.phoneNumber}}</td>
+        <a mat-raised-button color="warn" (click)="deleteUser(element._id)"><mat-icon>delete</mat-icon></a>
+    </tr>
+  </table>
+</div>

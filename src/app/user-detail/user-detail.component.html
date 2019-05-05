@@ -1,0 +1,19 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/users']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  <mat-card-content>
+    <dl>
+      <dt>Name:</dt>
+      <dd>{{user.name}}</dd>
+      <dt>Email:</dt>
+      <dd>{{user.email}}</dd>
+      <dt>Phone Number:</dt>
+      <dd>{{user.phoneNumber}}</dd>
+
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="warn" (click)="deleteUser(user._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

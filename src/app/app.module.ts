@@ -4,10 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookCreateComponent } from './book-create/book-create.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
+import { UserComponent } from './user/user.component';
+// import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserCreateComponent } from './user-create/user-create.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
@@ -28,27 +27,17 @@ import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   {
-    path: 'books',
-    component: BookComponent,
-    data: { title: 'Book List' }
+    path: 'users',
+    component: UserComponent,
+    data: { title: 'User List' }
   },
   {
-    path: 'book-details/:id',
-    component: BookDetailComponent,
-    data: { title: 'Book Details' }
-  },
-  {
-    path: 'book-create',
-    component: BookCreateComponent,
-    data: { title: 'Create Book' }
-  },
-  {
-    path: 'book-edit/:id',
-    component: BookEditComponent,
-    data: { title: 'Edit Book' }
+    path: 'user-create',
+    component: UserCreateComponent,
+    data: { title: 'Create User' }
   },
   { path: '',
-    redirectTo: '/books',
+    redirectTo: '/users',
     pathMatch: 'full'
   }
 ];
@@ -56,10 +45,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    BookDetailComponent,
-    BookCreateComponent,
-    BookEditComponent
+    UserComponent,
+    UserCreateComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

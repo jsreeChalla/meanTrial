@@ -4,7 +4,7 @@ var path = require('path');
 // var favicon = require('serve-favicon');
 var logger = require('morgan');
 
-var apiRouter = require('./routes/book');
+var apiRouter = require('./routes/user');
 
 var app = express();
 
